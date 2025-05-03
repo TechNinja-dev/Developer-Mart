@@ -190,7 +190,7 @@ print(greet("World"))</textarea>
                     });
                     
                     if (!response.ok) {
-                        throw new Error("API request failed with status ${response.status}");
+                        throw new Error(`API request failed with status ${response.status}`);
                     }
                     
                     const data = await response.json();
