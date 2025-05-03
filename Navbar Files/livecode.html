@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 13vh auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .code-editor {
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: none;
+            background-color: #f8f8f8;
+        }
+        .output {
+            height: 200px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .run-btn {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .run-btn:hover {
+            background-color: #3367d6;
+        }
+        .status {
+            color: #666;
+            font-style: italic;
+        }
+        .language-selector {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nbar" id="ng">
+        <div class="logo">
+            <img src="../Logos/logo.png" alt="">
+        </div>
+        <ul class="cont">
+            <li class="it"><a href="../index.html" class="ita">HOME</a></li>
+            <li class="it"><a href="cedit.html" class="ita">CODE EDITORS</a></li>
+            <li class="it"><a href="languages.html" class="ita">LANGUAGES</a></li>
+            <li class="it"><a href="tutorial.html" class="ita">TUTORIAL</a></li>
+        </ul>
+        <button class="th" id="ic" onclick="thchange()">
+            <i class="fa-regular fa-moon fa-2x"></i>
+        </button>
+        <button class="btn"id='login-btn' onclick="showlogin()">LOGIN</button>
+    </nav>
+
+    <div id="loginModal" class="modal">
+        <button id="close" onclick="closelogin()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Login</p>
+        <form action="" class="frm" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="email">Password</label>
+            <input type="password" name="email" class="size"><br>
+            <button class=" size continue " type="submit">Continue</button>
+            <span class="switch-btn">Don't have an account? 
+                <button class="switch" type="button" onclick="showSignup()">
+                    <span>Sign up</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <button id="close" onclick="closesignup()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Sign Up</p>
+        <form action="" class="frm" method="post">
+            <label for="name">Name</label>
+            <input type="text"name='name'placeholder='Your name' class="size"><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="email"> Create Password</label>
+            <input type="password" name="email" class="size"><br>
+            <button class=" size continue " type="submit">Sign Up</button>
+            <span class="switch-btn">Already have an account? 
+                <button class="switch" type="button" onclick="showlogin()">
+                    <span>Login</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="editor-container">
+            <div class="controls">
+                <select id="language" class="language-selector">
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="java">Java</option>
+                    <option value="c++">C++</option>
+                    <option value="go">Go</option>
+                    <option value="ruby">Ruby</option>
+                </select>
+                <button id="runBtn" class="run-btn">Run Code</button>
+            </div>
+            <textarea id="codeEditor" class="code-editor" placeholder="Enter your code here..."># Simple Python example
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))</textarea>
+            <div class="output" id="output">Output will appear here...</div>
+            <div id="status" class="status">Ready</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const codeEditor = document.getElementById('codeEditor');
+            const output = document.getElementById('output');
+            const runBtn = document.getElementById('runBtn');
+            const status = document.getElementById('status');
+            const languageSelector = document.getElementById('language');
+            
+            const API_KEY = 'AIzaSyBiglVs-a5F7y6bfh8QRxI3sVSmsFySttQ';
+            const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+            
+            runBtn.addEventListener('click', async function() {
+                const code = codeEditor.value.trim();
+                const language = languageSelector.value;
+                
+                if (!code) {
+                    output.textContent = 'Please enter some code to execute.';
+                    return;
+                }
+                
+                status.textContent = 'Executing code...';
+                output.textContent = 'Running...';
+                
+                try {
+                    const prompt = `Execute this ${language} code and show only the output. If there are errors, show only the error message:\n\n${code}`;
+                    
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [{
+                                    text: prompt
+                                }]
+                            }]
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error("API request failed with status ${response.status}");
+                    }
+                    
+                    const data = await response.json();
+                    
+                    if (data.candidates && data.candidates[0].content.parts[0].text) {
+                        const result = data.candidates[0].content.parts[0].text;
+                        output.textContent = result;
+                        status.textContent = 'Execution completed';
+                    } else {
+                        output.textContent = 'No output was returned from the API.';
+                        status.textContent = 'Execution completed with no output';
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    output.textContent = `Error:${error.message}`;
+                    status.textContent = 'Error occurred during execution';
+                }
+            });
+        });
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>
