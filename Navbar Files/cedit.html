@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editors</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body id="bg">
+    <nav class="nbar" id="ng">
+        <div class="logo">
+            <img src="../Logos/logo.png" alt="">
+        </div>
+        <ul class="cont">
+            <li class="it"><a href="../index.html" class="ita">HOME</a></li>
+            <li class="it"><a href="cedit.html" class="ita">CODE EDITORS</a></li>
+            <li class="it"><a href="languages.html" class="ita">LANGUAGES</a></li>
+            <li class="it"><a href="tutorial.html" class="ita">TUTORIAL</a></li>
+        </ul>
+        <button class="th" id="ic" onclick="thchange(),hdch()">
+            <i class="fa-regular fa-moon fa-2x"></i>
+        </button>
+        <button class="btn" onclick="showlogin()">LOGIN</button>
+    </nav>
+
+    <section class="intro">
+        <div class="intro-content">
+            <h1 id="dynamic-text"></h1>  <!-- Typing effect applied here -->
+            <p class="intro-text">
+                A code editor is a developer’s best tool. Whether you're writing your first program or building complex applications, having the right editor can boost productivity and efficiency. 
+            </p>
+            <p class="intro-text highlight">
+                Choose from the best editors below and start coding like a pro!
+            </p>
+        </div>
+        <div class="intro-image">
+            <img src="../Logos/cd-logo.png" alt="Programming Illustration">
+        </div>
+
+    </section>
+
+    <div id="loginModal" class="modal">
+        <button id="close" onclick="closelogin()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Login</p>
+        <form action="" class="frm" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="email">Password</label>
+            <input type="password" name="email" class="size"><br>
+            <button class=" size continue " type="submit">Continue</button>
+            <span class="switch-btn">Don't have an account? 
+                <button class="switch" type="button" onclick="showSignup()">
+                    <span>Sign up</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <button id="close" onclick="closesignup()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Sign Up</p>
+        <form action="" class="frm" method="post" >
+            <label for="name">Name</label>
+            <input type="text"name='name'placeholder='Your name' class="size"><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="email"> Create Password</label>
+            <input type="password" name="email" class="size"><br>
+            <button class=" size continue " type="submit">Sign Up</button>
+            <span class="switch-btn">Already have an account? 
+                <button class="switch" type="button" onclick="showlogin()">
+                    <span>Login</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+    <a href="livecode.html" class="lca">
+        <button class="btn lc">Live Code</button>
+    </a>
+
+    <div id="cedits">
+        <div class="cd">
+           <div class="lig">
+            <img src="../Logos/not.jpg" alt="">
+           </div>
+           <div class="txt">
+                <h1>Notepad++</h1>
+                <p>
+                Notepad++ is a free (as in “free speech” and also as in “free beer”) source code editor and Notepad replacement that supports several languages. Running in the MS Windows environment, its use is governed by
+                <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU General Public License</a> . <br>
+                Notepad++ was first released on SourceForge on 25 November 2003, as a Windows-only application.
+                </p>
+                <a href="https://notepad-plus-plus.org/downloads/">
+                    <button class="dld">Click here to Download</button>
+                </a>
+           </div>
+        </div>
+
+        <div class="cd">
+            <div class="lig">
+                <img src="../Logos/sub.png" alt="">
+            </div>
+            <div class="txt">
+                <h1>Sublime Text</h1>
+                <p>Sublime Text is a text and source code editor featuring a minimal interface, syntax highlighting and code folding with native support for numerous programming and markup languages, search and replace with support for regular expressions, an integrated terminal/console window, and customizable themes. Available for Windows, macOS, and Linux, its functionality can be expanded with plugins written in Python.</p>
+                <a href="https://www.sublimetext.com/download">
+                    <button class="dld">Click here to Download</button>
+                </a>
+            </div>
+       
+        </div>
+        <div class="cd">
+            <div class="lig">
+                <img src="../Logos/atom.png" alt="">
+            </div>
+            <div class="txt">
+                <h1>Atom</h1>
+                <p>Atom is a "hackable" text editor, which means it is customizable using HTML, CSS, and JavaScript. <br>
+                    Atom is a free and open-source text and source-code editor for macOS, Linux, and Windows with support for plug-ins written in JavaScript, and embedded Git control. Developed by GitHub, Atom was released on June 25, 2015
+                </p>
+                <a href="https://atom.en.softonic.com/">
+                    <button class="dld">Click here to Download</button>
+                </a>
+            </div>
+        </div>
+        <div class="cd">
+            <div class="lig">
+                <img src="../Logos/brk.png" alt="">
+            </div>
+            <div class="txt">
+                <h1>Brackets</h1>
+                <p>Brackets is a source code editor with a primary focus on web development created by Adobe Inc., it is free and open-source software licensed under the MIT License, and is currently maintained on GitHub by open-source developers. It is written in JavaScript, HTML and CSS. Brackets is cross-platform, available for macOS, Windows, and most Linux distributions. The main purpose of Brackets is its live HTML, CSS and JavaScript editing functionality
+                </p>
+                <a href="https://phcode.io/#/home">
+
+                    <button class="dld">Click here to Download</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="cd">
+            <div class="lig">
+                <img src="../Logos/vs.png" alt="">
+            </div>
+            <div class="txt">
+                <h1>Visual Studio Code</h1>
+                <p>
+                    Visual Studio Code, also commonly referred to as VS Code,[1] is a source-code editor developed by Microsoft with the Electron Framework, for Windows, Linux and macOS.[2] Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add functionality.
+                </p>
+                <a href="https://code.visualstudio.com/">
+
+                    <button class="dld">Click here to Download</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="cd">
+            <div class="lig">
+                <img src="../Logos/ij.png" alt="">
+            </div>
+            <div class="txt">
+                <h1>IntelliJ IDEA</h1>
+                <p>
+                    IntelliJ IDEA stands out with unrivaled Java and Kotlin support. Stay ahead of the curve with cutting-edge language features supported from the get-go.
+                    IntelliJ IDEA knows everything about your code and uses this knowledge to offer blazing fast navigation and an intelligent experience by providing relevant suggestions in every context.In 2009, JetBrains released the source code for IntelliJ IDEA under the open-source Apache License 2.0
+                </p>
+                <a href="https://www.jetbrains.com/idea/download/?section=windows">
+
+                    <button class="dld">Click here to Download</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="cd">
+            <div class="lig">
+                <img src="../Logos/eclp.png" alt="">
+            </div>
+            <div class="txt">
+                <h1>Eclipse</h1>
+                <p>
+                    Eclipse is an integrated development environment (IDE) used in computer programming.It contains a base workspace and an extensible plug-in system for customizing the environment. It had been the most popular IDE for Java development until 2016, when it was surpassed by IntelliJ IDEA. It is written mostly in Java and its primary use is for developing Java applications.
+                </p>
+                <a href="https://www.eclipse.org/downloads/">
+
+                    <button class="dld">Click here to Download</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="cd">
+            <div class="lig">
+                <img src="../Logos/pych.png" alt="">
+            </div>
+            <div class="txt">
+                <h1>PyCharm</h1>
+                <p>PyCharm is an integrated development environment (IDE) used for programming in Python. It provides code analysis, a graphical debugger, an integrated unit tester, integration with version control systems, and supports web development with Django. PyCharm is developed by the Czech company JetBrains and built on their IntelliJ platform.It is cross-platform, working on Microsoft Windows, macOS, and Linux.</p>
+                <a href="https://www.jetbrains.com/pycharm/download/?section=windows">
+
+                    <button class="dld">Click here to Download</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="cd">
+            <div class="lig">
+              <img src="../Logos/spy.png" alt="">
+            </div>
+            <div class="txt">
+              <h1>Spyder</h1>
+              <p>
+                Spyder is an open-source cross-platform integrated development environment (IDE) for scientific programming in the Python language. Spyder integrates with a number of prominent packages in the scientific Python stack,including NumPy, SciPy, Matplotlib, pandas, IPython, SymPy and Cython, as well as other open-source software.Spyder is extensible with first-party and third-party plugins, includes support for interactive tools for data inspection.
+              </p>
+              <a href="https://www.spyder-ide.org/">
+                  <button class="dld">Click here to Download</button>
+                </a>
+            </div>
+          </div>
+
+        <div class="cd">
+          <div class="lig">
+            <img src="../Logos/cl.png" alt="">
+          </div>
+          <div class="txt">
+            <h1>CLion</h1>
+            <p>
+                CLion is a powerful C and C++ IDE developed by JetBrains. It provides a smart coding environment with features that help developers write, debug, and manage code efficiently.It is cross-platform, supporting Windows, macOS, and Linux, and it primarily relies on CMake as its build system.One of its standout features is the built-in debugger, supporting GDB and LLDB, inspect variables, and step through their code for effective troubleshooting. 
+            </p>
+            <a href="https://www.jetbrains.com/clion/download/#section=windows">
+
+                <button class="dld">Click here to Download</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="cd">
+            <div class="lig">
+              <img src="../Logos/vst.png" alt="">
+            </div>
+            <div class="txt">
+              <h1>Visual Studio</h1>
+              <p>
+                The Visual Studio IDE is a creative launching pad that you can use to edit, debug, and build code, and then publish an app. The most comprehensive IDE for .NET and C++ developers on Windows. Fully packed with a sweet array of tools and features to elevate and enhance every stage of software development.It includes compilers, code completion tools, graphical designers, and many more features to enhance the software development process.
+              </p>
+              <a href="https://visualstudio.microsoft.com/">
+                  <button class="dld">Click here to Download</button>
+              </a>
+            </div>
+        </div>
+        <div class="cd">
+            <div class="lig">
+              <img src="../Logos/r.png" alt="">
+            </div>
+            <div class="txt">
+              <h1>RStudio</h1>
+              <p>
+                RStudio IDE (or RStudio) is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser. The RStudio IDE is a product of Posit PBC (formerly RStudio PBC, formerly RStudio Inc.).
+              </p>
+              <a href="https://posit.co/download/rstudio-desktop/">
+                  <button class="dld">Click here to Download</button>
+              </a>
+            </div>
+        </div>
+
+        <div class="cd">
+            <div class="lig">
+              <img src="../Logos/bj.png" alt="">
+            </div>
+            <div class="txt">
+              <h1>BlueJ</h1>
+              <p>
+                BlueJ is an integrated development environment (IDE) for the Java programming language, developed mainly for educational purposes, but also suitable for small-scale software development. It runs with the help of Java Development Kit (JDK).It was developed to support learning and teaching of OOPs(object-oriented programming). The objects can be interactively created and tested.
+                
+              </p>
+              <a href="https://www.bluej.org/">
+                  <button class="dld">Click here to Download</button>
+              </a>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+<script>
+    let J=0;
+    function hdch()
+    {
+        console.log(J)
+        var hd=document.getElementById('hd');
+        if (J==0)
+        {
+            hd.style.color='white';
+            J++
+            console.log(J)
+        }
+        else{
+            hd.style.color='rgb(56, 56, 229)';
+            J--
+            console.log(J)
+        }
+    }
+
+    const text = "Choose the Best Code Editor for You!";
+let l = 0;
+
+function typeEffect() {
+    if (l < text.length) {
+        document.getElementById("dynamic-text").innerHTML += text.charAt(l);
+        l++;
+        setTimeout(typeEffect, 100);
+    } else {
+        setTimeout(() => {
+            document.getElementById("dynamic-text").innerHTML = "";
+            l = 0;
+            typeEffect();
+        }, 2000);
+    }
+}
+
+typeEffect();
+
+</script>
+<script src="../script.js"></script>
+</html>

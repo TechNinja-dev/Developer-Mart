@@ -1,0 +1,16 @@
+# Basic security
+Options -Indexes
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Allow POST requests
+RewriteCond %{REQUEST_METHOD} !^(GET|POST|HEAD)
+RewriteRule .* - [R=405,L]
+
+# Handle PHP files
+AddHandler application/x-httpd-php .php
+
+# Error documents
+ErrorDocument 404 /errors/404.html
+ErrorDocument 403 /errors/403.html

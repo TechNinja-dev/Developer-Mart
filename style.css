@@ -1,0 +1,641 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar */
+.nbar{
+    padding: 0rem 0.5rem;
+    display: flex;
+    font-size: 1.4rem;
+    align-items: center;
+    position: fixed;
+    top: 0.6rem; /* Small gap from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    background-color:rgb(228, 194, 194);
+    /* background-color: transparent;
+    backdrop-filter: blur(30px); */
+    width: 95%;
+    height: 12vh;
+    border-radius: 0.8rem;
+  
+  z-index: 1000;
+
+    
+}
+.cont{
+   
+    display: flex;
+   padding: 0;
+   margin-left: 1vw;
+}
+.it{
+    list-style: none;
+    padding: 2vh 1.4vw;
+}
+.it a{
+    font-family: 'Geist Mono', monospace;
+    text-decoration: none;
+    color: white;
+    transition-duration: 0.5s;
+}
+.it a:hover{
+    color: rgb(87, 87, 240);
+   
+}
+
+.logo{
+    height: 9vh;
+    width: 7vw;
+    margin-left: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.logo img{
+    height: 100%;
+    width: 100%;
+}
+.th{
+    position: relative;
+    left: 32vw;
+    border-radius: 50%;
+    padding: 20px 25px;
+    border: none;
+    background-color:  rgb(232, 231, 231);
+}
+.btn{
+    font-weight: bold;
+    font-size: 1.5rem;
+    height: 8vh;
+    width: 9vw;
+    border-radius: 0.7rem;
+    position: relative;
+    left: 33vw;
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: 'Geist Mono', monospace;
+}
+/* Navigation bar */
+
+/* Section */
+.sect{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 80vh;
+    background: url('Logos/pysld.jpeg') no-repeat center center/cover;
+    box-shadow: inset -100px -150px 400px black,inset 100px 150px 400px black;
+    animation: slider;
+    animation-timing-function: linear;
+    animation-duration: 16s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    color: white;
+    margin-top: 15vh;
+}
+@keyframes slider
+{
+    0%{
+        
+        background: url('Logos/pysld.jpeg')no-repeat center center/cover;
+        
+    }
+    20%{
+        background: url('Logos/sl2.jpg')no-repeat center center/cover;
+     
+        
+    }
+    25%{
+        background: url('Logos/javasld.jpg')no-repeat center center/cover; 
+        
+    }
+    50%{
+        background: url('Logos/sl1.jpg')no-repeat center center/cover;
+      
+    }
+    75%{
+        
+        background: url('Logos/jsld.jpg') no-repeat center center/cover;
+    }
+    100%{
+        background: url('Logos/sl3.jpg') no-repeat center center/cover;
+    }
+    
+    
+}
+.sect h1{
+    font-size: 5rem;
+    margin-left: 4vw;
+    margin-bottom: 0;
+    margin-top: 15vh;
+    
+
+}
+.sect p{
+    font-size: 1.3rem;
+    margin-left: 4vw;
+    margin-right: 20vw;
+    margin-top: 0.6vh;
+    font-weight: bold;
+    /* font-family: 'Geist Mono', monospace; */
+}
+.cxt{
+    height: 25vh;
+    width: 100vw;
+    color: rgb(56, 56, 229);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+
+}
+.cxt marquee{
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: "Poppins", sans-serif;
+   
+}
+
+.serv{
+    height: auto;
+    width: 98%;
+    display: flex;
+    justify-content: space-around;
+   
+   margin: 0 auto;
+   
+}
+.ftlg{
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: rgb(67, 67, 241);
+    width: 4vw;
+    display: flex;
+    justify-content: center;
+    margin: 1.2rem 0 0.4rem 1.2rem;
+}
+.ftlg i{
+    color: white;
+    padding: 0.8rem;
+}
+.sct p{
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+.sct a{
+    margin: 2rem 0;
+    margin-left: 1.2rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: rgb(67, 67, 241);
+    font-weight: bold;
+}
+.sct a:hover{
+    color: rgb(77, 77, 232);
+
+}
+
+.sct h1{
+    margin-left: 1.2rem;
+    margin-top: 0.2rem;
+    font-size: 1.7rem;
+    /* color: #2b2b2b; */
+    margin-bottom: 0;
+}
+.sct{
+    height: 40vh;
+    width: 25vw;
+    border-radius: 3%;
+    margin: 2vh 0;
+    background-color: rgb(227, 224, 224);
+    box-shadow: 2px 2px 10px gray, -2px -2px 10px white;
+}
+.end{
+    /* border: 2px solid black; */
+    margin: 5rem auto;
+    padding-left: 4rem;
+    line-height: 0.9;
+   
+
+}
+.end span{
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(3, 3, 26);
+    /* font-family: cursive; */
+}
+#direct{
+    color: rgb(67, 67, 241);
+}
+.end a{
+    text-decoration: none;
+    position: relative;
+    left: 80vw;
+    bottom: 7vh;
+}
+.end button{
+    font-weight: bold;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    background-color:rgb(67, 67, 241);
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 0.7rem;
+}
+.end button:hover{
+    background-color: rgb(61, 61, 223);
+}
+.copy{
+    text-align: center;
+    color: rgb(155, 155, 155);
+}
+
+/* Style for code editor page */
+
+#hd{
+    display: flex;
+    align-items: center;
+   margin: 12vh 5vw 0vh 5vw;
+    font-size: 1.5rem;
+    color: rgb(56, 56, 229);
+  
+}
+.lc {
+    /* background: linear-gradient(135deg, #ff8c00, #ff3b3b); Vibrant Orange-Red */
+    background: linear-gradient(to bottom right, #2c3e50, #4b6584); 
+    color: white; /* Text stands out */
+    font-size: 1.1rem; /* Slightly larger for emphasis */
+    font-weight: bold;
+    border: none;
+    border-radius: 8px; /* Smooth corners */
+    padding: 12px 24px;
+    cursor: pointer;
+    
+    transition: all 0.3s ease-in-out;
+   
+}
+
+.lc:hover {
+    background: linear-gradient(135deg, #ff3b3b, #ff8c00); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly larger */
+    box-shadow: 0 1px 5px rgba(255, 60, 0, 0.5); /* More intense glow */
+}
+.lca{
+    position: fixed;
+    left: 55vw;
+    top: 88vh;
+    z-index: 1000;
+
+}
+.cd{
+    margin: 5vh 5vw;
+    
+    height: 48vh;
+    border-radius: 20px;
+    display: flex;
+    align-items: center; 
+    /* background: linear-gradient(135deg, #0a3d62, #1b4f72); */
+    /* background: linear-gradient(to bottom right, rgb(221, 218, 218), #0f172a); */
+    /* background: linear-gradient(to bottom right, rgb(221, 218, 218), #1e293b); */
+    background-color: rgb(214, 214, 214);
+    box-shadow:2px 2px 10px gray, -2px -2px 10px white;
+
+    transition-duration: 0.3s;
+
+}
+.cd:hover{
+    transform: scale(1.02);
+    /* box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2),0 -4px 10px rgba(0, 255, 255, 0.2); */
+    
+}
+
+.lig{
+    height: 45vh;
+    width: 25vw;
+    
+    margin: 0 1vw;
+   
+   
+}
+.lig img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-left: 2vw;
+}
+
+.txt{
+    height: 45vh;
+    width: 100%;
+    margin: 0 2vw;
+}
+.txt h1{
+    font-size: 3.1rem;
+    margin: 0.6vh 2vw;
+    
+}
+.txt p{
+    font-size: 1.4rem;
+    margin: 1vh 2vw; 
+     
+}
+.dld{
+    margin: 5vh 2vw;
+    height: 8vh;
+    width: 30vw;
+    font-size: 1.6rem;
+    border-radius: 0.4rem;
+    border: none;
+    color: white;
+    /* background-color: black; */
+    background: linear-gradient(to bottom right, #2c3e50, #4b6584); 
+
+}
+.dld:hover{
+    background: linear-gradient(135deg, #ff3b3b, #ff8c00); /* Reverse gradient on hover */
+
+}
+
+/* style for login page */
+.modal{
+    height: 60vh;
+    width: 30vw;
+    position: fixed;
+    background-color: rgb(19, 19, 19);
+    border-radius: 3%;
+    color: white;
+    top: 20%;
+    left: 35%;
+    z-index: 1000;
+    display: none;
+    border: 1px solid gray;
+    
+   
+}
+#signupModal{
+    height: 70vh;
+
+  
+}
+label{
+    margin-left: 2.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    margin-top: 0.6rem;
+}
+.size{
+    border: none;
+    width: 22vw;
+    padding: 0.7rem 1rem;
+    color: white;
+    background-color: rgb(12, 12, 12);
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 0.3rem;
+    font-size: 1.1rem;
+    margin-left: 2.8rem;
+
+ 
+
+}
+.size :-webkit-autofill {
+    background-color: rgb(12, 12, 12) !important;
+    /* -webkit-box-shadow: 0 0 0px 1000px lightblue inset !important; */
+}
+.frm{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* border: 1px solid white; */
+    margin: 0.5rem auto;
+    
+}
+input:focus
+{
+    border-color: rgb(81, 81, 241);
+    
+}
+.continue{
+    color: black;
+    padding: 0.7rem 1rem;
+    background-color: white;
+    width: 24vw;
+    border: none;
+    font-weight: bold;
+
+}
+.modal p{
+    text-align: center;
+    font-size: 1.7rem;
+    
+}
+.switch-btn{
+    margin-top: 1.1rem;
+    font-size: 0.9rem;
+    color: rgb(139, 139, 139);
+    text-align: center;
+}
+
+
+#close{
+    float: right;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: rgb(140, 140, 140);
+    font-size: 1rem;
+    margin: 0.2rem 0.2rem;
+}
+.switch{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: rgb(1, 217, 217);
+    text-decoration: none;
+
+}
+.switch :hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* languags page styling */
+.intro {
+    display: flex;
+    
+    padding-left: 3rem;
+
+    /* background: linear-gradient(135deg, #1e293b, #475569);  1 */
+    /* background: linear-gradient(135deg, #3a3d40, #1e90ff); 2 */
+    /* background: linear-gradient(135deg, #2c3e50, #f39c12);  3 */
+    /* background: linear-gradient(135deg, #141e30, #243b55);  */
+    /* background: linear-gradient(135deg, #23395d, #406e8e); 5 */
+    background: linear-gradient(135deg, #37474F, #00ADB5);
+    /* background: linear-gradient(to left,gold,yellow,red); */
+    /* background: linear-gradient(45deg,black,black,white); */
+
+    
+
+
+
+
+
+    color: white;
+    text-align: left;
+    height: 70vh;
+    
+}
+
+.intro-content {
+    max-width: 70vw;
+    margin-top: 20vh;
+}
+
+#dynamic-text{
+    font-size: 4rem;
+    margin-top: 2rem ;
+    margin-bottom: 0;
+    /* font-family: 'Geist Mono'; */
+
+}
+
+
+.intro-text {
+    font-size: 1.2rem;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #ffd700;
+}
+.intro-image{
+    height: 50vh;
+    width: 35vw;
+    
+    animation: bounce 2s infinite;
+    object-fit: cover;
+    margin: 18vh auto;
+    margin-right: 0.5vw;
+
+}
+ 
+.intro-image img {
+    height: 100%;
+    width: 100%;
+    
+}
+
+
+/* Bounce animation for images at intro */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.lang-container{
+    display: flex;
+    /* border: 1px solid blue; */
+    width: 100vw;
+    height: auto;
+    margin: 0.7rem auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.langbox{
+    background-color: rgb(227, 224, 224);
+    height: 50vh;
+    width: 40vw;
+    margin: 3vh 3vw;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.langbox:hover {
+    /* transform: translateY(-5px); */
+    transform: scale(1.03);
+    /* background-color: rgb(221, 218, 218); */
+
+    /* box-shadow: 5px 10px 20px linear-gradient(135deg, #ff3b3b, #ff8c00); */
+    
+}
+
+.langbox img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    /* margin-bottom: 0.7rem; */
+}
+
+.langbox h3 {
+    margin: 0.5rem 0;
+    color: #333;
+    font-size: 2rem;
+}
+
+.langbox p {
+    color: #666;
+    font-size: 0.99rem;
+    margin: 0 1rem 0.7rem 1rem;
+}
+.download-btn {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #45a049;
+}
+.tut-cont{
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0.7rem auto;
+}
+
+.cr-box{
+    height: 50vh;
+    width: 95vw;
+    border: 1px solid red;
+    border-radius: 0.6rem;
+    margin: 3vh 3vw;
+    display: flex;
+    align-items: center;
+    
+}
+.cr-box img{
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+}
+.descp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid blue;
+    width: 90vw;
+}

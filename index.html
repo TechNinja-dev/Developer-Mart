@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Mart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://geist-fonts.vercel.app/mono.css">
+
+</head>
+
+<body id="bg">
+    <!-- Navigation Bar -->
+    <nav class="nbar" id="ng">
+
+        <div class="logo">
+            <img src="Logos/logo.png" alt="">
+        </div>
+        <ul class="cont">
+            <li class="it"><a href="index.html" class="ita">HOME</a></li>
+            <li class="it"><a href="Navbar Files/cedit.html" class="ita">CODE EDITORS</a></li>
+            <li class="it"><a href="Navbar Files/languages.html" class="ita">LANGUAGES</a></li>
+            <li class="it"><a href="Navbar Files/tutorial.html" class="ita">TUTORIAL</a></li>
+        </ul>
+        <button class="th" id="ic" onclick="thchange(),intch()">
+            <i class="fa-regular fa-moon fa-2x"></i>
+        </button>
+        <button class="btn " id="login-btn" onclick="showlogin()" >LOGIN</button>
+
+
+    </nav>
+    <!-- Navigation Bar -->
+
+    <div id="loginModal" class="modal">
+        <button id="close" onclick="closelogin()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Login</p>
+        <form action="form.php" class="frm" method="post" >
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="pwd">Password</label>
+            <input type="password" name="pwd" class="size"><br>
+            <button class=" size continue " type="submit" name="login">Continue</button>
+            <span class="switch-btn">Don't have an account? 
+                <button class="switch" type="button" onclick="showSignup()">
+                    <span>Sign up</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <button id="close" onclick="closesignup()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Sign Up</p>
+        <form action="form.php"  method="POST" class="frm" >
+            <label for="name">Name</label>
+            <input type="text"name='name'placeholder='Your name' class="size"><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="pwd"> Create Password</label>
+            <input type="password" name="pwd" class="size"><br>
+            <button class=" size continue " type="submit" name="signup">Sign Up</button>
+            <span class="switch-btn">Already have an account? 
+                <button class="switch" type="button" onclick="showlogin()">
+                    <span>Login</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+
+    <!-- Animation -->
+    <section class="sect" id="sld">
+        <h1>Welcome To Developer Mart,</h1>
+        <p>Your one-stop destination for all development tools, languages, and learning resources.</p>
+    </section>
+    <!-- Animation -->
+
+    <div class="cxt" >
+        <marquee behavior="" direction="" scrollamount="17 " id="intro">
+            <h1 > 
+                Welcome to Your One-Stop Developer Hub! Everything You Need in One Place" 
+            </h1>
+        </marquee>
+    </div>
+
+
+    <div class="serv">
+        <div class="sct">
+            <div class="ftlg">
+                <i class="fas fa-code text-xl fa-2x"></i>
+            </div>
+            <h1 class="">Code Editors</h1>
+            <p class="">
+                Access all popular code editors with direct download links and setup guides.
+            </p>
+            <a href="Navbar Files/cedit.html" class="">
+                Browse Editors <span aria-hidden="true">→</span>
+            </a>
+        
+
+        </div>
+        <div class="sct">
+            <div class="ftlg">
+                <i class="fas fa-laptop-code text-xl fa-2x"></i>
+                
+            </div>
+            <h1 class="">Language and SDK's</h1>
+            <p class="">
+                Download compilers, SDKs and tools for all major programming languages.
+            </p>
+        
+            <a href="NavBar Files/languages.html" class="">
+                Explore Languages <span aria-hidden="true">→</span>
+            </a>
+        
+
+        </div>
+        <div class="sct">
+            <div class="ftlg">
+                <i class="fas fa-graduation-cap text-xl fa-2x"></i>
+                
+            </div>
+            <h1 class="">Learning Resources</h1>
+            <p class="">
+                Beginner-friendly tutorials and learning paths for various programming languages.
+            </p>
+            <a href="NavBar Files/tutorial.html" class="">
+                Start Learning <span aria-hidden="true">→</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="end">
+        <span id="endtxt">Ready To Dive In?</span><br>
+        <span id="direct">Start your development journey today.</span> <br>
+        <a href="NavBar Files/languages.html">
+            <button>Get Started</button>
+        </a>
+    </div>
+
+    <p class="copy">&copy; 2025 Developer Mart. All rights reserved.</p>
+
+
+</body>
+<script src="script.js"></script>
+<script>
+    var ed=document.getElementById('endtxt');
+    var int =document.getElementById('intro');
+    let I=0
+    function intch()
+    {
+        if (I==0)
+        {
+            int.style.color='white';
+            ed.style.color='white';
+            I++
+        }else
+        {
+            int.style.color='rgb(56, 56, 229)';
+            ed.style.color='rgb(3, 3, 26)';
+            I--
+        }
+
+    }
+</script>
+</html>

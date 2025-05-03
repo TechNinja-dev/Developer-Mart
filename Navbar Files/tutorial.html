@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body id="bg">
+    <nav class="nbar" id="ng">
+        <div class="logo">
+            <img src="../Logos/logo.png" alt="">
+        </div>
+        <ul class="cont">
+            <li class="it"><a href="../index.html" class="ita">HOME</a></li>
+            <li class="it"><a href="cedit.html" class="ita">CODE EDITORS</a></li>
+            <li class="it"><a href="languages.html" class="ita">LANGUAGES</a></li>
+            <li class="it"><a href="tutorial.html" class="ita">TUTORIAL</a></li>
+        </ul>
+        <button class="th" id="ic" onclick="thchange()">
+            <i class="fa-regular fa-moon fa-2x"></i>
+        </button>
+        <button class="btn" id="login-btn" onclick="showlogin()">LOGIN</button>
+    </nav>
+
+    <div id="loginModal" class="modal">
+        <button id="close" onclick="closelogin()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Login</p>
+        <form action="" class="frm" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="email">Password</label>
+            <input type="password" name="email" class="size"><br>
+            <button class=" size continue " type="submit">Continue</button>
+            <span class="switch-btn">Don't have an account? 
+                <button class="switch" type="button" onclick="showSignup()">
+                    <span>Sign up</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <button id="close" onclick="closesignup()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Sign Up</p>
+        <form action="" class="frm" method="post">
+            <label for="name">Name</label>
+            <input type="text"name='name'placeholder='Your name' class="size"><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="email"> Create Password</label>
+            <input type="password" name="email" class="size"><br>
+            <button class=" size continue " type="submit">Sign Up</button>
+            <span class="switch-btn">Already have an account? 
+                <button class="switch"  type="button" onclick="showlogin()">
+                    <span>Login</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+    <section class="intro">
+        <div class="intro-content" >
+            <h1 id="dynamic-text"></h1>
+            <p class="intro-text">Welcome to the ultimate coding hub! Whether you're a beginner or an experienced developer, our hands-on <br> tutorials  will help you learn, practice, and master programming step by step. 🚀</p>
+            
+            <p class="intro-text highlight">Explore basic to advanced coding with interactive examples and real-world projects to learn by doing.</p>
+
+        </div >
+        <div class="intro-image">
+            <img src="../Logos/tut-logo.png" alt="Coding Tutorials">
+        </div>
+    </section>
+
+  
+
+    
+</body>
+<script>
+    const text='Explore Beginner-Friendly Content';
+    let v=0;
+    function typeEffect() {
+        if (v < text.length) {
+            document.getElementById("dynamic-text").innerHTML += text.charAt(v);
+            v++;
+            setTimeout(typeEffect, 100); //  speed here
+        } else {
+            setTimeout(() => {
+                document.getElementById("dynamic-text").innerHTML = ""; // Clear text
+                v = 0; // Reset index
+                typeEffect(); // Restart typing effect
+            }, 2000); // Pause before restarting
+        }
+    }
+    
+    // Start typing effect when the page loads
+    typeEffect();
+</script>
+<script src="../script.js"></script>
+</html>

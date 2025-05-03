@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevMart-Languages</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        
+    </style>
+</head>
+<body id="bg">
+    <nav class="nbar" id="ng">
+        <div class="logo">
+            <img src="../Logos/logo.png" alt="">
+        </div>
+        <ul class="cont">
+            <li class="it"><a href="../index.html" class="ita">HOME</a></li>
+            <li class="it"><a href="cedit.html" class="ita">CODE EDITORS</a></li>
+            <li class="it"><a href="languages.html" class="ita">LANGUAGES</a></li>
+            <li class="it"><a href="tutorial.html" class="ita">TUTORIAL</a></li>
+        </ul>
+        <button class="th" id="ic" onclick="thchange()">
+            <i class="fa-regular fa-moon fa-2x"></i>
+        </button>
+        <button class="btn"id='login-btn' onclick="showlogin()">LOGIN</button>
+    </nav>
+
+    <div id="loginModal" class="modal">
+        <button id="close" onclick="closelogin()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Login</p>
+        <form action="" class="frm" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="email">Password</label>
+            <input type="password" name="email" class="size"><br>
+            <button class=" size continue " type="submit">Continue</button>
+            <span class="switch-btn">Don't have an account? 
+                <button class="switch" type="button" onclick="showSignup()">
+                    <span>Sign up</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <button id="close" onclick="closesignup()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <p>Sign Up</p>
+        <form action="" class="frm" method="post">
+            <label for="name">Name</label>
+            <input type="text"name='name'placeholder='Your name' class="size"><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" class="size" placeholder="Your email address"><br>
+            <label for="email"> Create Password</label>
+            <input type="password" name="email" class="size"><br>
+            <button class=" size continue " type="submit">Sign Up</button>
+            <span class="switch-btn">Already have an account? 
+                <button class="switch" type="button" onclick="showlogin()">
+                    <span>Login</span>
+                </button>
+            </span>
+        </form>
+    </div>
+
+
+    <section class="intro">
+        <div class="intro-content">
+            <h1 id="dynamic-text"></h1>
+            <p class="intro-text">
+                Programming languages are the foundation of software development. Whether you want to create websites,<br> build apps, or dive into AI, learning a programming language is the first step. 
+            </p>
+            <p class="intro-text highlight">
+                Start your journey today and explore the most popular languages used by developers worldwide!
+            </p>
+        </div>
+        <div class="intro-image">
+            <img src="../Logos/lang-intro.png" alt="Programming Illustration">
+        </div>
+    </section>
+
+
+    <div class="lang-container">
+        <div class="langbox">
+            <img src="../Logos/python-language.png" alt="Python">
+            <h3 class="ltitle">Python</h3>
+            <p class="ltitle">Download for Windows, macOS, Linux <br>
+                An interpreted, high-level, general-purpose programming language with dynamic semantics.</p>
+            <a href="https://www.python.org/downloads/" class="download-btn">Download</a>
+        </div>
+        
+        <div class="langbox">
+            <img src="../Logos/java.png" alt="Java">
+            <h3 class="ltitle">Java</h3>
+            <p class="ltitle">Download for Windows, macOS, Linux (JDK included)<br>A class-based, object-oriented programming language designed to have as few implementation dependencies as possible</p>
+            <a href="https://www.oracle.com/java/technologies/downloads/" class="download-btn">Download</a>
+        </div>
+        <div class="langbox">
+            <img src="../Logos/javascript.png" alt="JavaScript">
+            <h3 class="ltitle">JavaScript</h3>
+            <p class="ltitle">Download via Node.js or browsers <br>A lightweight, interpreted, or just-in-time compiled programming language with first-class functions.</p>
+            <a href="https://nodejs.org/en/download/" class="download-btn">Download</a>
+        </div>
+        <div class="langbox">
+            <img src="../Logos/c++pic.png" alt="C++">
+            <h3 class="ltitle">C++</h3>
+            <p class="ltitle">Download for Windows (MSVC), macOS (Clang), Linux (GCC) <br>A powerful, compiled language with object-oriented and low-level features, extending C with classes and templates.
+
+            </p>
+            <a href="https://sourceforge.net/projects/mingw/" class="download-btn">Download</a>
+          </div>
+        
+        <div class="langbox">
+            <img src="../Logos/ruby.png" alt="Ruby">
+            <h3 class="ltitle">Ruby</h3>
+            <p class="ltitle">Download with RVM/rbenv (Windows, macOS, Linux) <br>A dynamic, interpreted language focused on simplicity and productivity, known for its elegant syntax and Rails framework.
+
+            </p>
+            <a href="https://www.ruby-lang.org/en/downloads/" class="download-btn">Download</a>
+        </div>
+
+        <div class="langbox">
+            <img src="../Logos/c.png" alt="C Language">
+            <h3 class="ltitle">C</h3>
+            <p class="ltitle">Download for Windows (MinGW/MSVC), macOS (Clang), Linux (GCC)
+            <br>A compiled, procedural language with manual memory management, used for system programming and high-performance applications.
+
+        </p>
+            <a href="https://sourceforge.net/projects/mingw/" class="download-btn">Download</a>
+        </div>
+
+        <div class="langbox">
+            <img src="../Logos/rust.png" alt="Rust">
+            <h3 class="ltitle">Rust</h3>
+            <p class="ltitle">Install via Rustup (Windows, macOS, Linux) <br>A language empowering everyone to build reliable and efficient software with a focus on safety and performance.</p>
+            <a href="https://www.rust-lang.org/tools/install" class="download-btn">Download</a>
+        </div>
+        <div class="langbox">
+            <img src="../Logos/x.png" alt="PHP">
+            <h3 class="ltitle">XAMMP for PHP <img src="../Logos/php.png" style="height:10%; width: 10%; margin-top: 0.1rem;" alt=""></h3>
+            <p class="ltitle">Download for Windows (XAMPP/WAMP), macOS (Homebrew), Linux</p>
+            <a href="https://www.apachefriends.org/download.html" class="download-btn">Download</a>
+        </div>
+
+        <div class="langbox">
+            <img src="../Logos/swift.png" alt="Swift">
+            <h3 class="ltitle">Swift</h3>
+            <p class="ltitle">Download for macOS (Xcode) or Linux (official toolchain) <br>A modern, compiled language by Apple for iOS/macOS development, combining performance with safety and readability.
+
+            </p>
+            <a href="https://www.swift.org/install/windows/" class="download-btn">Download</a>
+        </div>
+
+        <div class="langbox">
+            <img src="../Logos/go.webp" alt="Go">
+            <h3 class="ltitle">Go</h3>
+            <p class="ltitle">Download for Windows, macOS, Linux (ARM/x64 supported) <br>An open source programming language that makes it easy to build simple, reliable, and efficient software.</p>
+            <a href="https://go.dev/dl/" class="download-btn">Download</a>
+        </div>
+        
+    
+        <!-- Add more languages similarly -->
+    </div>
+   
+</body>
+<script>
+    const text = "Unlock the World of Programming!";
+    let z = 0; 
+    
+    function typeEffect() {
+        if (z < text.length) {
+            document.getElementById("dynamic-text").innerHTML += text.charAt(z);
+            z++;
+            setTimeout(typeEffect, 100); //  speed here
+        } else {
+            setTimeout(() => {
+                document.getElementById("dynamic-text").innerHTML = ""; // Clear text
+                z = 0; // Reset index
+                typeEffect(); // Restart typing effect
+            }, 2000); // Pause before restarting
+        }
+    }
+    
+    // Start typing effect when the page loads
+    typeEffect();
+    
+</script>
+<script src="../script.js"></script>
+
+</html>
