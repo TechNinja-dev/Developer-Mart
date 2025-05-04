@@ -9,57 +9,69 @@
 
     <style>
         .container {
-            max-width: 1000px;
-            margin: 13vh auto;
-            background-color: white;
+            max-width: 95rem;
+            margin: 17vh auto;
+            background-color: rgb(227, 224, 224);
             border-radius: 8px;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            left: 1.7rem;
+            
         }
         .editor-container {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+          
+            gap: 1rem;
         }
         .code-editor {
-            height: 400px;
+            height: 60vh;
             border: 1px solid #ddd;
             border-radius: 4px;
             padding: 10px;
-            font-family: 'Courier New', monospace;
+            
             font-size: 14px;
             resize: none;
             background-color: #f8f8f8;
+            width: 60vw;
+            outline: none;
+            border: 2px solid gray;
         }
         .output {
-            height: 200px;
+            height: 60vh;
             border: 1px solid #ddd;
             border-radius: 4px;
             padding: 10px;
             background-color: #f8f8f8;
             overflow-y: auto;
             white-space: pre-wrap;
+            width: 30vw;
         }
         .controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            
         }
         .run-btn {
-            background-color: #4285f4;
+            background: #4CAF50;
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 1.4rem;
             transition: background-color 0.3s;
         }
         .run-btn:hover {
-            background-color: #3367d6;
+    background: #45a049;
         }
         .status {
-            color: #666;
+            color: #565656;
             font-style: italic;
+            margin-top: 0.6rem;
+            
         }
         .language-selector {
             padding: 8px;
@@ -68,7 +80,7 @@
         }
     </style>
 </head>
-<body>
+<body id="bg">
 
     <nav class="nbar" id="ng">
         <div class="logo">
@@ -80,7 +92,7 @@
             <li class="it"><a href="languages.html" class="ita">LANGUAGES</a></li>
             <li class="it"><a href="tutorial.html" class="ita">TUTORIAL</a></li>
         </ul>
-        <button class="th" id="ic" onclick="thchange()">
+        <button class="th" id="ic" onclick="thchange();livchange()">
             <i class="fa-regular fa-moon fa-2x"></i>
         </button>
         <button class="btn"id='login-btn' onclick="showlogin()">LOGIN</button>
@@ -126,30 +138,49 @@
         </form>
     </div>
 
-    <div class="container">
+    <!-- Code editor -->
+    <div class="container" id="live">
+        <div class="controls">
+            <select id="language" class="language-selector">
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="java">Java</option>
+                <option value="c++">C++</option>
+                <option value="go">Go</option>
+                <option value="ruby">Ruby</option>
+            </select>
+            <button id="runBtn" class="run-btn">Run Code</button>
+        </div>
         <div class="editor-container">
-            <div class="controls">
-                <select id="language" class="language-selector">
-                    <option value="python">Python</option>
-                    <option value="javascript">JavaScript</option>
-                    <option value="java">Java</option>
-                    <option value="c++">C++</option>
-                    <option value="go">Go</option>
-                    <option value="ruby">Ruby</option>
-                </select>
-                <button id="runBtn" class="run-btn">Run Code</button>
-            </div>
             <textarea id="codeEditor" class="code-editor" placeholder="Enter your code here..."># Simple Python example
 def greet(name):
     return f"Hello, {name}!"
 
 print(greet("World"))</textarea>
             <div class="output" id="output">Output will appear here...</div>
-            <div id="status" class="status">Ready</div>
         </div>
+        <div id="status" class="status">Ready</div>
     </div>
 
     <script>
+        var lv=document.getElementById("live");
+        let liv=0;
+        function livchange()
+        {
+            if (liv==0)
+            {
+                lv.style.backgroundColor=" rgb(33, 33, 33)";
+                liv++;
+            }
+            else
+            {
+                lv.style.backgroundColor="rgb(227, 224, 224)";
+                liv--;
+            }
+        }
+
+
+        //ai and api part below
         document.addEventListener('DOMContentLoaded', function() {
             const codeEditor = document.getElementById('codeEditor');
             const output = document.getElementById('output');
