@@ -24,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"]))
         $m=$row["email"];
         if ($u_mail==$m)
         {
-            echo '<script type="text/javascript"> alert("User with this mail already exists !")</script>';
+            echo '<script type="text/javascript"> alert("User with this mail already exists !")
+            window.location.href = "index.html";</script>';
             $flag=TRUE;
             break;
         }
