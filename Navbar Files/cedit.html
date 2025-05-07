@@ -45,12 +45,12 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
         <p>Login</p>
-        <form action="" class="frm" method="post">
+        <form action="../form.php" class="frm" method="post">
             <label for="email">Email</label>
             <input type="email" name="email" class="size" placeholder="Your email address"><br>
             <label for="email">Password</label>
-            <input type="password" name="email" class="size"><br>
-            <button class=" size continue " type="submit">Continue</button>
+            <input type="password" name="pwd" class="size"><br>
+            <button class=" size continue " type="submit" name="login">Continue</button>
             <span class="switch-btn">Don't have an account? 
                 <button class="switch" type="button" onclick="showSignup()">
                     <span>Sign up</span>
@@ -64,14 +64,14 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
         <p>Sign Up</p>
-        <form action="" class="frm" method="post" >
+        <form action="../form.php" class="frm" method="post" >
             <label for="name">Name</label>
             <input type="text"name='name'placeholder='Your name' class="size"><br>
             <label for="email">Email</label>
             <input type="email" name="email" class="size" placeholder="Your email address"><br>
             <label for="email"> Create Password</label>
-            <input type="password" name="email" class="size"><br>
-            <button class=" size continue " type="submit">Sign Up</button>
+            <input type="password" name="pwd" class="size"><br>
+            <button class=" size continue " type="submit" name="signup">Sign Up</button>
             <span class="switch-btn">Already have an account? 
                 <button class="switch" type="button" onclick="showlogin()">
                     <span>Login</span>

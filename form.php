@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"]))
     } 
     if ($flag==FALSE)
     {
+        echo '<script> console.log("Reached") </script>' ;
         $stmt = $conn->prepare("INSERT INTO logged (Username,email, Password) VALUES (?,?,?)");
         // Insert data using prepared statement
         
