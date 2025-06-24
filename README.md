@@ -42,4 +42,6 @@ Explore programming resources, write and run code live in the browser (powered b
 
 ---
 
-
+## 📬 Contact & Credits
+🔗 Linked In: www.linkedin.com/in/prakhar-srivastava-58bb85303
+📧 Email: prakharsrivastava019@gmail.com
