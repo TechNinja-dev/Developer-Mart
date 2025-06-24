@@ -1,4 +1,4 @@
-![Alt text]("Logos/logo2.png")
+![Alt text](Logos/logo2.png)
 
 # 🧠 Developer Mart
 
