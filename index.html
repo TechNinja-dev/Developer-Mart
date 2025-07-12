@@ -19,6 +19,9 @@
         <div class="logo">
             <img src="Logos/logo2.png" alt="">
         </div>
+
+        <button class="hamburger">&#9776;</button>
+
         <ul class="cont">
             <li class="it"><a href="index.html" class="ita">HOME</a></li>
             <li class="it"><a href="Navbar Files/cedit.html" class="ita">CODE EDITORS</a></li>
@@ -30,21 +33,19 @@
         </button>
         <button class="btn " id="login-btn" onclick="showlogin()" >LOGIN</button>
 
-    <button class="hamburger">&#9776;</button>
     </nav>
     <!-- Navigation Bar -->
 
     <!-- Mobile Menu (hidden by default) -->
-    <div class="mobile-menu">
-        <button class="close-btn">&times;</button>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
+<div class="mobile-menu">
+    <button class="close-btn">&times;</button>
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="Navbar Files/cedit.html">CODE EDITORS</a></li>
+        <li><a href="Navbar Files/languages.html">LANGUAGES</a></li>
+        <li><a href="Navbar Files/tutorial.html">TUTORIAL</a></li>
+    </ul>
+</div>
 
     <div id="loginModal" class="modal">
         <button id="close" onclick="closelogin()">
@@ -160,19 +161,47 @@
     <p class="copy">&copy; 2025 Developer Mart. All rights reserved.</p>
 
 <script>
+    // Mobile Menu Toggle with better handling
     document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const closeBtn = document.querySelector('.close-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    hamburger.addEventListener('click', function() {
-        mobileMenu.classList.add('active');
+        const hamburger = document.querySelector('.hamburger');
+        const closeBtn = document.querySelector('.close-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        hamburger.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+        
+        closeBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
     });
-    
-    closeBtn.addEventListener('click', function() {
-        mobileMenu.classList.remove('active');
-    });
-});
+
+    // Theme toggle function
+    function intch() {
+        var ed = document.getElementById('endtxt');
+        var int = document.getElementById('intro');
+        let I = 0;
+        
+        if (I == 0) {
+            int.style.color = 'white';
+            ed.style.color = 'white';
+            I++;
+        } else {
+            int.style.color = 'rgb(56, 56, 229)';
+            ed.style.color = 'rgb(3, 3, 26)';
+            I--;
+        }
+    }
 </script>
 </body>
 <script src="script.js"></script>
