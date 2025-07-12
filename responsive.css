@@ -366,3 +366,57 @@ input, textarea, select {
         font-size: 1.2rem !important;
     }
 }
+
+/* Mobile Menu Styling Fixes */
+.mobile-menu {
+    background: #2c3e50 !important; /* Dark background */
+    color: white !important;
+    padding: 2rem !important;
+}
+
+.mobile-menu .nav-links {
+    list-style: none !important; /* Remove bullets */
+    padding: 0 !important;
+    margin: 2rem 0 0 0 !important;
+}
+
+.mobile-menu .nav-links li {
+    margin: 1.5rem 0 !important;
+    padding: 0 !important;
+}
+
+.mobile-menu .nav-links a {
+    color: white !important; /* White text */
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+    display: block !important;
+    padding: 0.5rem 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.mobile-menu .nav-links a:hover {
+    color: #4da6ff !important; /* Light blue on hover */
+    transform: translateX(5px) !important;
+}
+
+.close-btn {
+    color: white !important;
+    font-size: 2rem !important;
+    background: none !important;
+    border: none !important;
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    cursor: pointer !important;
+}
+
+/* Ensure menu covers full height */
+.mobile-menu.active {
+    height: 100vh !important;
+    overflow-y: auto !important;
+}
+
+/* Hide scrollbar when menu is open */
+body.menu-open {
+    overflow: hidden !important;
+}
